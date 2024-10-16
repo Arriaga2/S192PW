@@ -40,11 +40,11 @@ class controladorVista extends Controller
                 $resultado = $valor . ' TB son ' . $this->convertirTBaGB($valor) . ' GB.';
                 break;
             default:
-                $resultado = 'Unidad no válida.';
+                $resultado = 'No vale';
                 break;
         }
 
-        // l resultado como una cadena
+        // l resultado aqui lo da como dacena de texto
         return $resultado;
     }
     private function convertirMBaGB($mb)
