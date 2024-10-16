@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
     //return view('welcome');
 //});
 
-Route::view('inicio/', 'inicio')->name('rutainicio');
+Route::view('/principal','principal')->name('rutarprincipal');
+
+Route::view('/inicio', 'inicio')->name('rutainicio');
 
 Route::view('/repaso1','repaso1')->name('rutarepaso');

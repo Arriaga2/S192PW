@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>1</h1>
-</body>
-</html>
+
+@extends('layouts.plantilla1')
+
+@section('titulo','Repaso 1')
+
+@section('contenido')
+
+  <div class="card-body">
+    <h5 class="card-title">Repaso 1</h5>
+    <p class="card-text">    
+    <b>Nombre:</b>
+
+  </div>
+          
+  @endsection
+
