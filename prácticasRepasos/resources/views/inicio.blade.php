@@ -31,7 +31,7 @@
     <b>Grupo:</b> S192<br>
     <b>Último Cuatrimestre:</b> 7<br>
     </p>
-    <a href="#" class="btn btn-primary">REPASO 1 </a>
+    <a href="/repaso1" class="btn btn-primary">REPASO 1</a>
   </div>
 </div>
 
