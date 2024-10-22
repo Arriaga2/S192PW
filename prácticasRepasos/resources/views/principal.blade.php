@@ -19,7 +19,7 @@
     <div class="d-flex flex-column justify-content-center align-items-center text-center full-height">
         <h1 class="display-1">Vamos al Repaso</h1>
         <p>Clic....</p>
-        <a href="/principal" class="btn btn-primary">Repaso 1</a>
+        <a href="/principal" class="btn btn-success">Repaso 1</a>
     </div>
 </body>
 </html>

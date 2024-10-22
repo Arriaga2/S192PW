@@ -15,17 +15,17 @@
                 @csrf
 
                 <div class="mb-3">
-                    <label for="valor" class="form-label">Valor</label>
+                    <label for="valor" class="form-label">Ingresa el valor</label>
                     <input type="text" class="form-control" name="valor">
                 </div>
 
                 <div class="mb-3">
                     <label for="unidad" class="form-label">Selecciona</label>
                     <select class="form-select" name="unidad" required>
-                        <option value="MBtoGB">MB a GB</option>
-                        <option value="GBtoMB">GB a MB</option>
-                        <option value="GBtoTB">GB a TB</option>
-                        <option value="TBtoGB">TB a GB</option>
+                        <option value="MBtoGB">mb a gb</option>
+                        <option value="GBtoMB">gb a mb</option>
+                        <option value="GBtoTB">gb a tb</option>
+                        <option value="TBtoGB">tb a gb</option>
                     </select>
                 </div>
 

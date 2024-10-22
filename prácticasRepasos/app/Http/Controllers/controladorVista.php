@@ -28,7 +28,7 @@ class controladorVista extends Controller
         
         switch ($unidad) {
             case 'MBtoGB':
-                $resultado = $valor . ' MB son ' . $this->convertirMBaGB($valor) . ' GB.';
+                $resultado = $valor . ' MB son ' . $this->convertirMBaGB($valor) . 'GB.';
                 break;
             case 'GBtoMB':
                 $resultado = $valor . ' GB son ' . $this->convertirGBaMB($valor) . ' MB.';
@@ -37,7 +37,7 @@ class controladorVista extends Controller
                 $resultado = $valor . ' GB son ' . $this->convertirGBaTB($valor) . ' TB.';
                 break;
             case 'TBtoGB':
-                $resultado = $valor . ' TB son ' . $this->convertirTBaGB($valor) . ' GB.';
+                $resultado = $valor . ' TB son ' . $this->convertirTBaGB($valor) . 'GB.';
                 break;
             default:
                 $resultado = 'No vale';
