@@ -16,6 +16,16 @@ class controladorVistas extends Controller
         return view('clientes');
     }
     public function procesarCliente(Request $peticion){
+
+        $validate = $peticion->validate([
+            'txtnombre' => 'required|min:3|max:255',
+            'txtapellido' => 'required',
+            'txtcorreo' => 'required|email:rfc,dns',
+            'txttelefono' => 'required|numeric',
+
+        ]);
+
+
         // return 'La informacion del cliente llego al controlador';
 
         //devuelve todo lo que contiene la peticion
