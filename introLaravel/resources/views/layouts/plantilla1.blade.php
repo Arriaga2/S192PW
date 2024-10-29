@@ -20,11 +20,11 @@
           <ul class="navbar-nav">
 
             <li class="nav-item active">
-              <a class="nav-link {{ request()->routeIs('rutaform')?'text-warning':'' }}" href="{{ route('rutaform') }}">Registro de Clientes <span class="sr-only"></span></a>
+              <a class="nav-link {{ request()->routeIs('rutaform')?'text-warning':'' }}" href="{{ route('rutaform') }}">{{__('Registro de Clientes')}}<span class="sr-only"></span></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link {{ request()->routeIs('rutaclientes')?'text-success':'' }}" href="{{ route('rutaclientes') }}">Consultar clientes</a>
+              <a class="nav-link {{ request()->routeIs('rutaclientes')?'text-success':'' }}" href="{{ route('rutaclientes') }}">{{__('Consultar Clientes')}}</a>
             </li>
           </ul>
         </nav>
