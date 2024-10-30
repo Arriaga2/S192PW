@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite(['resources/js/app.js']) 
-    <title>Document</title>
+@extends('layouts.plantila1')
 
-</head>
-<body>
+@section('titulo', 'Página Principal')
 
-        <h1>Bienvenido Turista!</h1>
-    </div>
-</body>
-</html>
+@section('contenido')
+<div class="container mt-4">
+    <h1>Bienvenido a la Biblioteca</h1>
+    <p>Noticias literarias...</p>
+</div>
+
+<footer class="text-center mt-5">
+    <p>&copy; Biblioteca, {{ date('d M Y') }}</p>
+</footer>
+@endsection
