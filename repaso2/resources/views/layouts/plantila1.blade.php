@@ -34,7 +34,7 @@
         @yield('contenido')
 
         <footer class="bg-dark text-center text-white py-3">
-            <p class="mb-0">&copy; Biblioteca {{ date('Y') }}</p>
+        <p class="mb-0">Biblioteca &copy; {{ date('d M Y') }}</p>
         </footer>
     </div>
     
