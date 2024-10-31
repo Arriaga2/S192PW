@@ -8,7 +8,4 @@
     <p>Noticias literarias...</p>
 </div>
 
-<footer class="text-center mt-5">
-    <p>&copy; Biblioteca, {{ date('d M Y') }}</p>
-</footer>
 @endsection
