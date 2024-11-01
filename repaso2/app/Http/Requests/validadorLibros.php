@@ -11,7 +11,7 @@ class validadorLibros extends FormRequest
      */
     public function authorize(): bool
     {
-        return true; // cambido a true para permitir la validacon
+        return true;
     }
 
     /**
@@ -22,11 +22,13 @@ class validadorLibros extends FormRequest
     public function rules(): array
     {
         return [
-            'isbn' => 'required|digits:13|unique:libros|regex:/^\d+$/', 
-            'titulo' => 'required|string|max:150', 
-            'paginas' => 'required|integer|min:1', 
-            'año' => 'required|integer|digits:4|min:1000|max:' . date('Y'), 
-            'email_editorial' => 'required|email' 
+        'ISBN' => 'required|digits:13', 
+        'Titulo' => 'required|string|max:150', 
+        'Autor' => 'required', 
+        'Paginas' => 'required|integer|min:1', 
+        'Año' => 'required|integer|digits:4|min:1000|max:' . date('Y'), 
+        'Editorial' => 'required', 
+        'EmailEditorial' => 'required|email:rfc,dns', 
         ];
     }
 }
