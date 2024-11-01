@@ -50,10 +50,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-4 mb-3 mb-md-0">
-                    <h6>{{ __('Centro Literario') }}</h6>
+                    <h6>{{ __('Centro Tinieblas') }}</h6>
                 </div>
                 <div class="col-12 col-md-4 mb-3 mb-md-0">
-                    <h6>© 2024 {{ __('Biblioteca') }}</h6>
+                    <h6>© 2024 {{ __('La Biblio') }}</h6>
                 </div>
                 <div class="col-12 col-md-4">
                     <h6>{{ __('31 de Octubre, 2024') }}</h6>
