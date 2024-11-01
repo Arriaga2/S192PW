@@ -45,5 +45,19 @@
     "Unauthorized": "Unauthorized",
     "Verify Email Address": "Verify Email Address",
     "Whoops!": "Whoops!",
-    "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account."
+    "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account.",
+    "Biblioteca": "Library",
+    "Inicio": "Home",
+    "Registro": "Register",
+    "Bienvenido": "Welcome",
+    "Centro Tinieblas": "Darkness Center",
+    "Explora": "Explore",
+    "Título": "Title",
+    "Autor": "Author",
+    "Número de Páginas": "Number of Pages",
+    "Año": "Year",
+    "Editorial": "Publisher",
+    "Correo Editorial": "Publisher Email",
+    "Registrar": "Register"
+
 }
