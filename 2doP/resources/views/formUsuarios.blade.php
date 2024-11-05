@@ -15,24 +15,35 @@
 
     <form>
 
-        <div class="mb-3">
-            <label  class="form-label">Correo: </label>
-            <input type="text" class="form-control" >
+    @session('Proceso')
+    <script>
+        Swal.fire({
+            title: "{{__('Registrado')}}",
+            text: "{{__('Se Acaba De Registrar')}}",
+            icon: "success"
+        });
+    </script>    
+
+      @endsession
+
+      <div class="mb-3">
+            <label for="Correo" class="form-label">Correo</label>
+            <input type="text" class="form-control" id="Correo" name="Correo" >
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Contraseña: </label>
-            <input type="text" class="form-control" >
-        </div>                
+            <label for="Contraseña" class="form-label">Contraseña</label>
+            <input type="text" class="form-control" id="Contraseña" name="Contraseña" >
+        </div>
 
         <div class="mb-3">
-            <label  class="form-label">Edad: </label>
-            <input type="text" class="form-control"  >
+            <label for="Edad" class="form-label">Edad</label>
+            <input type="text" class="form-control" id="Edad" name="Edad" >
         </div>
 
 
 
-        <button type="" class="btn btn-danger "> Guardar Usuario</button>
+        <button type="submit" class="btn btn-danger "> Guardar Usuario</button>
 
 
 </div>

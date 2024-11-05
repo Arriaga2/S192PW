@@ -2,24 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\proceso;
 use Illuminate\Http\Request;
 
 class peticion extends Controller
-
-@@ -9,7 +10,16 @@ class controladorVistas extends Controller
-    public function inicio(){
-        return view('inicio');
+{
+    public function formUsuarios()
+    {
+        return view('formUsuarios');
     }
-
-    public function registro(){
-        return view('registro');
-    }
-
-    public function procesarLibro(validadorLibros $request){
-        $titulo = $request->input('titulo');
-
-        session()->flash('exito', 'El libro "' . $titulo . '" ha sido registrado exitosamente.');
-
-        return redirect()->route('rutaregistro'); 
+    public function proceso( $request) 
+    {
+        $request = $request->Correo; 
+        $request = $request->Contraseña; 
+        $request = $request->Edad; 
+        session()->flash('Guardado', 'Usuario: '.$request.' se guardó al llavaso');
+        return to_route('formUsuarios');
     }
 }
