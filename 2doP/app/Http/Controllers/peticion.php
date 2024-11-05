@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\proceso;
 use Illuminate\Http\Request;
 
 class peticion extends Controller
@@ -11,12 +10,15 @@ class peticion extends Controller
     {
         return view('formUsuarios');
     }
-    public function proceso( $request) 
+
+    public function proceso(Request $request) 
     {
-        $request = $request->Correo; 
-        $request = $request->Contraseña; 
-        $request = $request->Edad; 
-        session()->flash('Guardado', 'Usuario: '.$request.' se guardó al llavaso');
-        return to_route('formUsuarios');
+        $correo = $request->input('Correo');
+        $contraseña = $request->input('Contraseña');
+        $edad = $request->input('Edad');
+
+        session()->flash('Guardado', 'Usuario: ' . $correo . ' se guardó con éxito');
+        
+        return to_route('rutausuarios');
     }
 }
