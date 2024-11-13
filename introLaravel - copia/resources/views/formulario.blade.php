@@ -28,13 +28,14 @@
             @endsession
 
 
+
             <div class="card font-monospace">
               <div class="card-header fs-5 text-center text-primary">
                 {{__('Registro Clientes')}}
               </div>
               <div class="card-body text-justify">
                 
-                <form action="{{ route('enviaCliente') }}" method="POST">
+                <form action="enviarCliente" method="POST">
 
                   @csrf 
 
