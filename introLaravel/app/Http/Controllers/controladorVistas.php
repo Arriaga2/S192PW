@@ -14,9 +14,9 @@ class controladorVistas extends Controller
     /*public function formulario(){
         return view('formulario');
     }*/
-    
+
     public function consulta(){
-        return view('clientes');
+
     }
     public function procesarCliente(validadorClientes $peticionValidada){
 
