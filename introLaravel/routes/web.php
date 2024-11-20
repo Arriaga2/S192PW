@@ -4,7 +4,6 @@ use App\Http\Controllers\clienteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorVistas;
 
-
 //controlador vistas
 
 Route::get('/',[controladorVistas::class, 'home'])->name('rutainicio');
@@ -23,6 +22,9 @@ Route::get('/client', [clienteController::class, 'index'])->name('rutaclientes')
 
 Route::get('/clientes/{id}/edit', [clienteController::class, 'edit'])->name('rutaedit');
 
+Route::put('/clientes/{id}/update', [clienteController::class, 'update'])->name('rutaupdate');
+
+Route::delete('/clientes/{id}', [clienteController::class, 'destroy'])->name('rutadestroy');
 
 
 

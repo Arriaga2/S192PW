@@ -13,10 +13,6 @@
             @endif
 
             @session('exito')
-            <x-Alert tipo="danger"> {{ $value }} </x-Alert>
-            @endsession
-
-            @session('exito')
             <script>
               Swal.fire({
                 title: "Good job!",

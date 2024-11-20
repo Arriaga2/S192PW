@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Http\Requests\validadorClientes;
 
+
 class clienteController extends Controller
 {
     /**
@@ -73,18 +74,23 @@ class clienteController extends Controller
     public function update(Request $request, string $id)
     {
 
-    DB::table('clientes')
-        ->where('id', $id)
-        ->update([
+        $request->validate([
+            'txtnombre' => 'required|max:255',
+            'txtapellido' => 'required|max:255',
+            'txtcorreo' => 'required|email',
+            'txttelefono' => 'required|numeric',
+        ]);
+    
+        DB::table('clientes')->where('id', $id)->update([
             'nombre' => $request->input('txtnombre'),
             'apellido' => $request->input('txtapellido'),
             'correo' => $request->input('txtcorreo'),
             'telefono' => $request->input('txttelefono'),
             'updated_at' => Carbon::now(),
         ]);
-        session()->flash('exito', 'El cliente se actualizó correctamente.');
 
-        return redirect()->route('rutaindex');
+        session()->flash('exito', 'cliente actualizdo correctamnte.');
+        return to_route('rutaclientes');
 
     }
 
@@ -93,6 +99,10 @@ class clienteController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        DB::table('clientes')->where('id', $id)->delete();
+
+        session()->flash('exito', 'El cliente ha sido eliminado');
+ 
+        return redirect()->route('rutaclientes');
     }
 }
