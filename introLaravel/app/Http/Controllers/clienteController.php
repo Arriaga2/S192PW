@@ -24,6 +24,7 @@ class clienteController extends Controller
     {
         return view('formulario');
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -59,7 +60,11 @@ class clienteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+          // Obtener el cliente por ID
+          $cliente = DB::table('clientes')->where('id', $id)->first();
+
+         // redriigir a una vista de edición con los datos 
+          return view('editarCliente', compact('cliente'));
     }
 
     /**
@@ -67,7 +72,20 @@ class clienteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+    DB::table('clientes')
+        ->where('id', $id)
+        ->update([
+            'nombre' => $request->input('txtnombre'),
+            'apellido' => $request->input('txtapellido'),
+            'correo' => $request->input('txtcorreo'),
+            'telefono' => $request->input('txttelefono'),
+            'updated_at' => Carbon::now(),
+        ]);
+        session()->flash('exito', 'El cliente se actualizó correctamente.');
+
+        return redirect()->route('rutaindex');
+
     }
 
     /**
