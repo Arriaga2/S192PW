@@ -59,41 +59,36 @@ class clienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-          // Obtener el cliente por ID
-          $cliente = DB::table('clientes')->where('id', $id)->first();
+    public function edit($id)
+{
 
-         // redriigir a una vista de edición con los datos 
-          return view('editarCliente', compact('cliente'));
-    }
+    $cliente = DB::table('clientes')->where('id', $id)->first();
+
+    return view('editarCliente', compact('cliente'));
+}
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-
         $request->validate([
-            'txtnombre' => 'required|max:255',
-            'txtapellido' => 'required|max:255',
-            'txtcorreo' => 'required|email',
-            'txttelefono' => 'required|numeric',
+            'nombre' => 'required|string|max:255',
+            'apellido' => 'required|string|max:255',
+            'correo' => 'required|email|max:255',
+            'telefono' => 'required|string|max:15',
+        ]);
+
+        DB::table('clientes')->where('id', $id)->update([
+            'nombre' => $request->input('nombre'),
+            'apellido' => $request->input('apellido'),
+            'correo' => $request->input('correo'),
+            'telefono' => $request->input('telefono'),
+            'updated_at' => now(),
         ]);
     
-        DB::table('clientes')->where('id', $id)->update([
-            'nombre' => $request->input('txtnombre'),
-            'apellido' => $request->input('txtapellido'),
-            'correo' => $request->input('txtcorreo'),
-            'telefono' => $request->input('txttelefono'),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        session()->flash('exito', 'cliente actualizdo correctamnte.');
-        return to_route('rutaclientes');
-
+        return redirect()->route('rutaclientes')->with('exito', 'Se actualizo cliente al llavaso');
     }
-
     /**
      * Remove the specified resource from storage.
      */

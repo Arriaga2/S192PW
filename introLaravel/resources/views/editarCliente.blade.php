@@ -1,51 +1,37 @@
-
 @extends('layouts.plantilla1')
 
-@section('titulo','Formulario')
+@section('titulo', 'Formulario')
 
 @section('contenido')
 <div class="container">
     <h2>Editar Cliente</h2>
-    <form action="{{ route('rutaedit', $cliente->id) }}" method="PUT">
-        @csrf
-        @method('PUT')
+    <form action="{{ route('rutaupdate', $cliente->id) }}" method="POST">
+    @csrf
+    @method('PUT')
 
-        <div class="mb-3">
-            <label for="txtnombre" class="form-label">{{ __('Nombre') }}</label>
-            <input type="text" class="form-control" id="txtnombre" name="txtnombre" 
-                   value="{{ old('txtnombre', $cliente->nombre) }}" required>
-            <small class="fst-italic text-danger">{{ $errors->first('txtnombre') }}</small>
+        <div class="mb-4">
+        <label for="nombre" class="form-label text-secondary fw-bold">Nombre </label>
+        <input type="text" class="form-control form-control-lg border-0 shadow-sm" id="nombre" name="nombre" value="{{ $cliente->nombre }}" required>
         </div>
 
-        <div class="mb-3">
-            <label for="txtapellido" class="form-label">{{ __('Apellido') }}</label>
-            <input type="text" class="form-control" id="txtapellido" name="txtapellido" 
-                   value="{{ old('txtapellido', $cliente->apellido) }}" required>
-            <small class="fst-italic text-danger">{{ $errors->first('txtapellido') }}</small>
+        <div class="mb-4">
+            <label for="apellido" class="form-label text-secondary fw-bold">Apellido</label>
+            <input type="text" class="form-control form-control-lg border-0 shadow-sm" id="apellido" name="apellido" value="{{ $cliente->apellido }}" required>
         </div>
 
-        <div class="mb-3">
-            <label for="txtcorreo" class="form-label">{{ __('Correo') }}</label>
-            <input type="email" class="form-control" id="txtcorreo" name="txtcorreo" 
-                   value="{{ old('txtcorreo', $cliente->correo) }}" required>
-            <small class="fst-italic text-danger">{{ $errors->first('txtcorreo') }}</small>
+        <div class="mb-4">
+            <label for="correo" class="form-label text-secondary fw-bold">Correo Electrónico</label>
+            <input type="email" class="form-control form-control-lg border-0 shadow-sm" id="correo" name="correo" value="{{ $cliente->correo }}" required>
         </div>
 
-        <div class="mb-3">
-            <label for="txttelefono" class="form-label">{{ __('Teléfono') }}</label>
-            <input type="text" class="form-control" id="txttelefono" name="txttelefono" 
-                   value="{{ old('txttelefono', $cliente->telefono) }}" required>
-            <small class="fst-italic text-danger">{{ $errors->first('txttelefono') }}</small>
+        <div class="mb-4">
+            <label for="telefono" class="form-label text-secondary fw-bold">Teléfono</label>
+            <input type="text" class="form-control form-control-lg border-0 shadow-sm" id="telefono" name="telefono" value="{{ $cliente->telefono }}" required>
         </div>
 
-        <div class="card-footer text-muted">
-            <div class="d-grid gap-2 mt-2 mb-1">
-                <button type="submit" class="btn btn-success btn-sm">{{ __('Guardar Cambios') }}</button>
-            </div>
-        </div>
-    </form>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-success btn-lg shadow">Actualizar Datos</button>
+        </div>>
+</form>
 </div>
-
-    @endsection
-
-
+@endsection
